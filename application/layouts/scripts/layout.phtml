@@ -1,0 +1,49 @@
+<?php
+// application/layouts/scripts/layout.phtml
+
+echo $this->doctype() ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Magento Code Search</title>
+    <?php //echo $this->headLink()->appendStylesheet('/css/global.css') ?>
+    <style>
+        pre {
+            border:1px solid silver;
+            color:#222222;
+            margin-bottom:4px;
+            margin-top:4px;
+            padding:0.5em;
+            width:85%;
+            word-wrap:break-word;
+        }
+        .snl:link, .snl:visited, .snl:active, .snl:hover {
+            color:black;
+        }
+        a:link {
+            color:#0000CC;
+        }
+        .snl {
+            cursor:pointer;
+            display:block;
+            text-decoration:none;
+        }
+        .snl .ln {
+            color:#7777CC;
+        }
+    </style>
+</head>
+<body>
+<div id="header" style="background-color: #EEEEEE; height: 30px;">
+    <div id="header-logo" style="float: left">
+        <b>Application in progress...</b>
+    </div>
+    <div id="header-navigation" style="float: right">
+        <a href="<?php echo $this->url(array('controller'=>'codesearch'), 'default', true) ?>">Code Search</a>
+    </div>
+</div>
+
+<?php echo $this->layout()->content ?>
+
+</body>
+</html>

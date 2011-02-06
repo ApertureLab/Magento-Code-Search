@@ -1,0 +1,13 @@
+<?php Zend_Debug::dump(get_class($this->form)) ?>
+<?php $this->form->setAction($this->url()) ?>
+<?php echo $this->form ?>
+<p><?php echo $this->package ?></p>
+<?php if (!empty($this->entries)): ?>
+    <?php foreach ($this->entries as $entry): ?>
+        <?php if (strip_tags($entry->getContent()->getText()) != ''): ?>
+            <?php $link = $entry->getLink() ?>
+            <?php echo $entry->getTitle() . "\n" ?>
+            <?php echo preg_replace('/href=\"/i', 'href="' . $link[0]->getHref() , $entry->getContent()->getText()) ?>
+        <?php endif ?>
+    <?php endforeach ?>
+<?php endif ?>
